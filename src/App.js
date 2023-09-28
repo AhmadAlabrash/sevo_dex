@@ -38,12 +38,12 @@ function App() {
   return (
 
     <div className="App">
-      <Header account={account} setAccount={setAccount} network ={network}  />
+      <Header account={account} setAccount={setAccount} network ={network} setNetwork={setNetwork}  />
       <div className="mainWindow">
-{network === 1 || network === 56 || network === 137 || network === 42161 || network === 10 ? (        <Routes>
-          <Route path="/" element={<Swap provider={provider} setProvider={setProvider} account={account} setAccount={setAccount} network={network} />} />
+{network === 1 || network === 56 || network === 137 || network === 42161 || network === 10 || network === 43114 ? (        <Routes>
+          <Route path="/" element={<Swap provider={provider} setProvider={setProvider} account={account} setAccount={setAccount} network={network}  />} />
           <Route path="/tokens" element={<Tokens  />} />
-        </Routes>): (<div>We are available now just on Ethereum , OP Mainnet , BSC , Polygon and Arbitrum .</div>)}
+        </Routes>): (<div>We are available now just on Ethereum , OP Mainnet , Binance Chain , Polygon , Avalanche and Arbitrum .</div>)}
       </div>
 
     </div>

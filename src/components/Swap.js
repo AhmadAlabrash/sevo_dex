@@ -10,6 +10,7 @@ import tokenListpo from "../tokenListpo.json";
 import tokenListeth from "../tokenListeth.json";
 import tokenListbs from "../tokenListbs.json";
 import tokenListar from "../tokenListar.json";
+import tokenListav from "../tokenListav.json";
 
 import axios from "axios";
 import { ethers } from 'ethers';
@@ -54,6 +55,12 @@ function Swap(props) {
         baseUrl = 'https://arbitrum.api.0x.org'
    
         break;    
+    case 43114:
+        tokenList = tokenListav ;
+        networkName = 'Avalanche';
+        baseUrl = 'https://avalanche.api.0x.org/'
+   
+        break;     
   
 
     }
