@@ -1,39 +1,4 @@
-[    {
-    "symbol": "BNB",
-    "name": "BNB",
-    "address": "0x0000000000000000000000000000000000000000",
-    "decimals": 18,
-    "chainId": 56,
-    "logoURI": "https://tokens.1inch.io/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c_1.png",
-    "coingeckoId": "binancecoin",
-    "listedIn": [
-        "1inch",
-        "openocean",
-        "rubic",
-        "lifinance",
-        "xyfinance"
-    ]
-},
-{
-    "symbol": "WBNB",
-    "name": "Wrapped BNB",
-    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-    "decimals": 18,
-    "chainId": 56,
-    "logoURI": "https://tokens.1inch.io/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c_1.png",
-    "coingeckoId": "wbnb",
-    "listedIn": [
-        "coingecko",
-        "1inch",
-        "sushiswap",
-        "openocean",
-        "pancake",
-        "rubic",
-        "lifinance",
-        "xyfinance",
-        "elkfinance"
-    ]
-},
+[  
     {
         "symbol": "WETH",
         "name": "WETH",
