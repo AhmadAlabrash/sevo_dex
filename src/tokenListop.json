@@ -1,4 +1,18 @@
-[        
+[           {
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "address": "0x0000000000000000000000000000000000000000",
+    "decimals": 18,
+    "chainId": 10,
+    "logoURI": "https://tokens.1inch.io/0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.png",
+    "coingeckoId": "ethereum",
+    "listedIn": [
+        "1inch",
+        "openocean",
+        "lifinance",
+        "xyfinance"
+    ]
+}, 
     {
     "symbol": "WETH",
     "name": "WETH",

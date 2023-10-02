@@ -6,42 +6,45 @@ import { ethers } from 'ethers';
 import Swap from "./components/Swap";
 import Tokens from "./components/Tokens";
 import { Routes, Route } from "react-router-dom";
-import { useConnect, useAccount } from "wagmi";
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { useConnect, useAccount ,useContract  } from "wagmi";
+import { useWeb3Modal } from '@web3modal/wagmi/react';
+import { useWeb3ModalState } from '@web3modal/wagmi/react'
+
 
 function App() {
-  const [provider, setProvider] = useState(null)
+  
+  const { address, isConnected } = useAccount();
   const [account, setAccount] = useState(null)
+  const [providert, setprovidert] = useState(null)
   const [network, setNetwork] = useState(null)
   const [tokenListMainApp, settokenListMainApp] = useState(null)
-
-  const loadBlockchainData = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
-    setProvider(provider)
-    const { chainId } = await provider.getNetwork()
-    await setNetwork(chainId)
-   
+  const { open, selectedNetworkId , close } = useWeb3ModalState()
 
 
 
-  }
+
+  useEffect(()=>{
+   const providereth = new ethers.providers.Web3Provider(window.ethereum);
+   setprovidert(providereth);
+   setAccount(address)
+   setNetwork(selectedNetworkId); 
+ 
+  } , [selectedNetworkId && isConnected])
 
   useEffect(() => {
-    loadBlockchainData()
-  }, [network])
-
-
-
-
+    // Listen for the 'chainChanged' event to detect when the user changes networks
+      window.ethereum.on('chainChanged', () => {
+      // Reload the page when the network is changed
+      window.location.reload();
+    });})
   
-
   return (
 
-    <div className="App">
-      <Header account={account} setAccount={setAccount} network ={network} setNetwork={setNetwork}  />
+    <div className="App" >
+      <Header />
       <div className="mainWindow">
 {network === 1 || network === 56 || network === 137 || network === 42161 || network === 10 || network === 43114 ? (        <Routes>
-          <Route path="/" element={<Swap provider={provider} setProvider={setProvider} account={account} setAccount={setAccount} network={network}  />} />
+          <Route path="/" element={<Swap account={account} isConnected={isConnected} network={network} providert={providert} />} />
           <Route path="/tokens" element={<Tokens  />} />
         </Routes>): (<div>We are available now just on Ethereum , OP Mainnet , Binance Chain , Polygon , Avalanche and Arbitrum .</div>)}
       </div>

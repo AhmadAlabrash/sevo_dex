@@ -12,9 +12,11 @@ header {
 }
 
 .logo{
-  width: 150px;
+  width: 190px;
   height: 60px;
   padding-right: 20px;
+  padding-left: 0px;
+  
 }
 
 .eth{
@@ -46,7 +48,7 @@ header {
   transition: 0.3s;
   display: flex;
   align-items: center;
-  background-color: rgb(34, 42, 58);
+  background-color: #222a3a;
   color: white;
 }
 
@@ -95,10 +97,10 @@ header {
 }
 
 .tradeBox {
-  width: 400px;
+  width: 450px;
   background-color: #0E111B;
   border: 2px solid #21273a;
-  min-height: 300px;
+  min-height: 450px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -119,6 +121,7 @@ header {
 .cog {
   color: #51586f;
   transition: 0.3s;
+  size: 100px;
 }
 
 .cog:hover {
@@ -129,15 +132,15 @@ header {
 
 .switchButton {
   background-color: #3a4157;
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
   align-items: center;
   justify-content: center;
   display: flex;
   border-radius: 8px;
   position: absolute;
-  top: 86px;
-  left: 180px;
+  top: 100px;
+  left: 200px;
   color: #5F6783;
   border: 3px solid #0E111B;
   font-size: 12px;
@@ -159,14 +162,15 @@ header {
 
 .inputs {
   position: relative;
+  text-align: left;
 }
 
 .assetOne {
   position: absolute;
-  min-width: 50px;
-  height: 30px;
+  min-width: 65px;
+  height: 45px;
   background-color: #3a4157;
-  top: 36px;
+  top: 37px;
   right: 20px;
   border-radius: 100px;
   display: flex;
@@ -180,10 +184,10 @@ header {
 
 .assetTwo {
   position: absolute;
-  min-width: 50px;
-  height: 30px;
+  min-width: 65px;
+  height: 45px;
   background-color: #3a4157;
-  top: 135px;
+  top: 171px;
   right: 20px;
   border-radius: 100px;
   display: flex;

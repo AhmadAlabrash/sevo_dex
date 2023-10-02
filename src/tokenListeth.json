@@ -1,4 +1,21 @@
 [
+    {
+        "symbol": "ETH",
+        "name": "Ethereum",
+        "address": "0x0000000000000000000000000000000000000000",
+        "decimals": 18,
+        "chainId": 1,
+        "logoURI": "https://tokens.1inch.io/0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.png",
+        "coingeckoId": "ethereum",
+        "listedIn": [
+            "1inch",
+            "openocean",
+            "optimism",
+            "rubic",
+            "lifinance",
+            "xyfinance"
+        ]
+    },
 
 
 {
@@ -22,6 +39,7 @@
         "xyfinance"
     ]
 },
+
 {
     "symbol": "DAI",
     "name": "Dai",
@@ -37,6 +55,27 @@
         "sushiswap",
         "openocean",
         "optimism",
+        "arbitrum_bridge",
+        "rubic",
+        "lifinance",
+        "xyfinance",
+        "elkfinance"
+    ]
+},
+{
+    "symbol": "WETH",
+    "name": "WETH",
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "decimals": 18,
+    "chainId": 1,
+    "logoURI": "https://tokens.1inch.io/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+    "coingeckoId": "weth",
+    "listedIn": [
+        "coingecko",
+        "1inch",
+        "uniswap",
+        "sushiswap",
+        "openocean",
         "arbitrum_bridge",
         "rubic",
         "lifinance",

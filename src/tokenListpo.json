@@ -1,4 +1,43 @@
-[    
+[         {
+    "symbol": "MATIC",
+    "name": "Polygon",
+    "address": "0x0000000000000000000000000000000000000000",
+    "decimals": 18,
+    "chainId": 137,
+    "logoURI": "https://tokens.1inch.io/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0.png",
+    "coingeckoId": "matic-network",
+    "listedIn": [
+        "coingecko",
+        "1inch",
+        "openocean",
+        "rubic",
+        "lifinance",
+        "xyfinance"
+    ]
+},   
+
+ {
+    "symbol": "WETH",
+    "name": "WETH",
+    "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+    "decimals": 18,
+    "chainId": 137,
+    "logoURI": "https://tokens.1inch.io/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619.png",
+    "coingeckoId": "weth",
+    "listedIn": [
+        "coingecko",
+        "1inch",
+        "uniswap",
+        "sushiswap",
+        "openocean",
+        "quickswap",
+        "dfyn",
+        "rubic",
+        "lifinance",
+        "xyfinance",
+        "elkfinance"
+    ]
+},
  {
     "symbol": "WBTC",
     "name": "Wrapped Bitcoin",
@@ -7,6 +46,28 @@
     "chainId": 137,
     "logoURI": "https://tokens.1inch.io/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.png",
     "coingeckoId": "wrapped-bitcoin",
+    "listedIn": [
+        "coingecko",
+        "1inch",
+        "uniswap",
+        "sushiswap",
+        "openocean",
+        "quickswap",
+        "dfyn",
+        "rubic",
+        "lifinance",
+        "xyfinance",
+        "elkfinance"
+    ]
+},
+{
+    "symbol": "WMATIC",
+    "name": "Wrapped Matic",
+    "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+    "decimals": 18,
+    "chainId": 137,
+    "logoURI": "https://tokens.1inch.io/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0.png",
+    "coingeckoId": "wmatic",
     "listedIn": [
         "coingecko",
         "1inch",
@@ -226,28 +287,7 @@
             "xyfinance"
         ]
     },
-    {
-        "symbol": "WETH",
-        "name": "WETH",
-        "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
-        "decimals": 18,
-        "chainId": 137,
-        "logoURI": "https://tokens.1inch.io/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619.png",
-        "coingeckoId": "weth",
-        "listedIn": [
-            "coingecko",
-            "1inch",
-            "uniswap",
-            "sushiswap",
-            "openocean",
-            "quickswap",
-            "dfyn",
-            "rubic",
-            "lifinance",
-            "xyfinance",
-            "elkfinance"
-        ]
-    },
+
 
     {
         "symbol": "BOR",

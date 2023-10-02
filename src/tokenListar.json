@@ -13,26 +13,7 @@
         "lifinance",
         "xyfinance"
     ]
-}  ,        {
-    "symbol": "WETH",
-    "name": "WETH",
-    "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-    "decimals": 18,
-    "chainId": 42161,
-    "logoURI": "https://tokens.1inch.io/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
-    "coingeckoId": "weth",
-    "listedIn": [
-        "coingecko",
-        "1inch",
-        "sushiswap",
-        "openocean",
-        "arbitrum_bridge",
-        "rubic",
-        "lifinance",
-        "xyfinance",
-        "elkfinance"
-    ]
-}, {
+}  ,  {
     "symbol": "UNI",
     "name": "Uniswap",
     "address": "0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0",
@@ -65,6 +46,26 @@
         "arbitrum_bridge",
         "rubic",
         "lifinance"
+    ]
+},
+{
+    "symbol": "WETH",
+    "name": "WETH",
+    "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "decimals": 18,
+    "chainId": 42161,
+    "logoURI": "https://tokens.1inch.io/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+    "coingeckoId": "weth",
+    "listedIn": [
+        "coingecko",
+        "1inch",
+        "sushiswap",
+        "openocean",
+        "arbitrum_bridge",
+        "rubic",
+        "lifinance",
+        "xyfinance",
+        "elkfinance"
     ]
 },    {
     "symbol": "CRV",
