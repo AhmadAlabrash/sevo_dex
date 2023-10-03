@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import { useConnect, useAccount ,useContract  } from "wagmi";
 import { useWeb3Modal } from '@web3modal/wagmi/react';
 import { useWeb3ModalState } from '@web3modal/wagmi/react'
+import Bridge from "./components/bridge";
 
 
 function App() {
@@ -41,11 +42,18 @@ function App() {
   return (
 
     <div className="App" >
+
+
+
+
+
       <Header />
       <div className="mainWindow">
 {network === 1 || network === 56 || network === 137 || network === 42161 || network === 10 || network === 43114 ? (        <Routes>
           <Route path="/" element={<Swap account={account} isConnected={isConnected} network={network} providert={providert} />} />
-          <Route path="/tokens" element={<Tokens  />} />
+          <Route path="/tokens/*" element={<Tokens  />} />
+          <Route path="/bridge/*" element={<Bridge  />} />
+          
         </Routes>): (<div>We are available now just on Ethereum , OP Mainnet , Binance Chain , Polygon , Avalanche and Arbitrum .</div>)}
       </div>
 

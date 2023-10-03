@@ -1,8 +1,6 @@
 import React from "react";
-import {Button, Modal} from "antd";
 import Logo from "../logo.png";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
 
 
 function Header() {
@@ -14,6 +12,9 @@ function Header() {
         <img src={Logo} alt="logo" className="logo" />
         <Link to="/" className="link">
           <div className="headerItem">Swap</div>
+        </Link>
+        <Link to="/bridge/" className="link">
+          <div className="headerItem">Bridge</div>
         </Link>
         <Link to="/tokens" className="link">
           <div className="headerItem">Tokens</div>

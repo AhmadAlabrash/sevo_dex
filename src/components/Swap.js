@@ -14,55 +14,58 @@ import tokenListar from "../tokenListar.json";
 import tokenListav from "../tokenListav.json";
 import axios from "axios";
 import { ethers } from 'ethers';
+import { LiFiWidget } from '@lifi/widget';
+
 const qs = require('qs');
 
 
 
 function Swap(props) {
   const {  account , isConnected , network , providert } = props; 
-  let tokenList , networkName , baseUrl , url , chart ;
+  let tokenList , networkName , baseUrl , url , chart , mainToken ;
   switch (network) {
     case 1:
       tokenList = tokenListeth ;
       networkName = 'Ethereum' ;
       baseUrl = 'https://api.0x.org'
+      mainToken = 'eth'
       
       break;
     case 10:
       tokenList = tokenListop ;
       networkName = 'optimism';
       baseUrl = 'https://optimism.api.0x.org'
-     
+      mainToken = 'eth'
       break;
     case 56:
       tokenList = tokenListbs ;
       networkName = 'bsc';
       baseUrl = 'https://bsc.api.0x.org'
-    
+      mainToken = 'bnb'
       break;
     case 137:
         tokenList = tokenListpo ;
         networkName = 'polygon';
         baseUrl = 'https://polygon.api.0x.org'
-       
+        mainToken='matic'
         break;
     case 42161:
         tokenList = tokenListar ;
         networkName = 'arbitrum';
         baseUrl = 'https://arbitrum.api.0x.org'
-   
+        mainToken='eth'
         break;    
     case 43114:
         tokenList = tokenListav ;
         networkName = 'Avalanche';
         baseUrl = 'https://avalanche.api.0x.org/'
-   
+        mainToken ='avax'
         break;     
   
 
     }
 
-
+  const [gasFee , setGasFee] = useState(0)
   const [balanceOfToken , setbalanceOfToken] = useState(0)
   const [contra, setContra] = useState(null)
   const chartRef = useRef(null);
@@ -327,6 +330,9 @@ async function fetchPrices(one, two ){
       const quoteb = await responseb.json();
       console.log(quoteb);
       const price =await  parseFloat(quoteb.price);
+      const fee = await ((quoteb.gasPrice)* (quoteb.gas) )
+      await setGasFee(fee)
+      
   
       await  setPrices({
         'tokenOne' : 1 ,
@@ -358,7 +364,7 @@ useEffect(()=>{
   if(isFetchingBalance){
     messageApi.open({
       type: 'error',
-      content: `Insufficient ${tokenOne.symbol} amount`,
+      content: `Insufficient ${tokenOne.symbol} balance`,
       duration: 0,
     })
   }    
@@ -562,6 +568,7 @@ useEffect(()=>{
   return (
     <>
       {contextHolder}
+
       <Modal
         open={isOpen}
         footer={null}
@@ -589,7 +596,7 @@ useEffect(()=>{
 
 
 
- <div style={{ display: 'flex', width: '100%',  height: '120vh' , overflow: 'hidden'  }}>
+ <div style={{ display: 'flex', width: '100%',  height: '120vh' , overflow: 'hidden'  , paddingTop : '28px'}}>
       <div style={{ flex: '0.6', paddingLeft : '25px'}}>
         <div id="chartcontainer"  style={{height: '60%' }}></div>
       </div>
@@ -618,8 +625,9 @@ useEffect(()=>{
              />
         <h6 style={{ padding : ' 0 0 2px 0  ' , margin : '0' , fontSize : '11px'}}>Price: $ {(tokenPriceDollar)? (tokenPriceDollar):(0.00)}</h6>
 
-          <Input  placeholder="0" value={tokenTwoAmount} disabled={true} onBeforeInput='er43' />
+          <Input  placeholder="0" value={tokenTwoAmount} disabled={true}  />
           <h6 style={{ padding : '0' , margin : '0'}}>Price: $ {(tokenTwoPriceDollar)? (tokenTwoPriceDollar):(0.00)}</h6>
+          <h6 style={{ padding : ' 5px 0 2px 0  ' , margin : '0' , fontSize : '11px'}}>gasPrice:  {(gasFee)? ((gasFee/ 1000000000000000000 ).toFixed(4) + ` ${mainToken}`):(0.00)}</h6>
 
           <div className="switchButton" onClick={switchTokens} disabled={isFetchingPrices || isApproving || isLoading}>
             <ArrowDownOutlined className="switchArrow"  />
