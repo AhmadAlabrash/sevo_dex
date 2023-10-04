@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 
 import Swap from "./components/Swap";
-import Tokens from "./components/Tokens";
+import Buy from "./components/Buy";
 import { Routes, Route } from "react-router-dom";
 import { useConnect, useAccount ,useContract  } from "wagmi";
 import { useWeb3Modal } from '@web3modal/wagmi/react';
@@ -51,7 +51,7 @@ function App() {
       <div className="mainWindow">
 {network === 1 || network === 56 || network === 137 || network === 42161 || network === 10 || network === 43114 ? (        <Routes>
           <Route path="/" element={<Swap account={account} isConnected={isConnected} network={network} providert={providert} />} />
-          <Route path="/tokens/*" element={<Tokens  />} />
+          <Route path="/buy/*" element={<Buy  />} />
           <Route path="/bridge/*" element={<Bridge  />} />
           
         </Routes>): (<div>We are available now just on Ethereum , OP Mainnet , Binance Chain , Polygon , Avalanche and Arbitrum .</div>)}

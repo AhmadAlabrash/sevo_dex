@@ -16,8 +16,8 @@ function Header() {
         <Link to="/bridge/" className="link">
           <div className="headerItem">Bridge</div>
         </Link>
-        <Link to="/tokens" className="link">
-          <div className="headerItem">Tokens</div>
+        <Link to="/buy" className="link">
+          <div className="headerItem">Buy Crypto</div>
         </Link>
       </div>
       <div className="rightH">
