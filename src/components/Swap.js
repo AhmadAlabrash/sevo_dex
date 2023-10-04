@@ -97,6 +97,7 @@ function Swap(props) {
   const [tokenPriceDollar , settokenPriceDollar] = useState(0);
   const [tokenTwoPriceDollar , settokenTwoPriceDollar] = useState(0);
   const [isStillWritting , setisStillWritting] = useState(false);
+  
 
 
   const handleSwap = async () => {
@@ -627,7 +628,7 @@ useEffect(()=>{
 
           <Input  placeholder="0" value={tokenTwoAmount} disabled={true}  />
           <h6 style={{ padding : '0' , margin : '0'}}>Price: $ {(tokenTwoPriceDollar)? (tokenTwoPriceDollar):(0.00)}</h6>
-          <h6 style={{ padding : ' 5px 0 2px 0  ' , margin : '0' , fontSize : '11px'}}>gasPrice:  {(gasFee)? ((gasFee/ 1000000000000000000 ).toFixed(4) + ` ${mainToken}`):(0.00)}</h6>
+          <h6 style={{ padding : ' 5px 0 2px 0  ' , margin : '0' , fontSize : '11px'}}>gasPrice:  {(gasFee)? ((gasFee/ 100 ).toFixed(4) + ` ${mainToken}`):(0.00)}</h6>
 
           <div className="switchButton" onClick={switchTokens} disabled={isFetchingPrices || isApproving || isLoading}>
             <ArrowDownOutlined className="switchArrow"  />
